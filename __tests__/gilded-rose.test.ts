@@ -18,9 +18,9 @@ describe("Gilded Rose", function () {
     expect(items[0].quality).toEqual(quality - 1);
   });
 
-  it("should degrade by 1 after a day has passed", function () {
+  it("should degrade by 2 after sellIn has passed", function () {
     const quality = 10;
-    const sellIn = 0;
+    const sellIn = -1;
 
     const gildedRose = new GildedRose([new Item("foo", sellIn, quality)]);
     const items = gildedRose.updateQuality();
@@ -41,9 +41,9 @@ describe("Gilded Rose", function () {
     expect(items[0].quality).toEqual(quality - 2);
   });
 
-  it("should degrade by 5 after sellIn has passed by 3 days", function () {
+  it("should degrade by 5 after sellIn has passed by 2 days", function () {
     const quality = 10;
-    const sellIn = 1;
+    const sellIn = 0;
 
     const gildedRose = new GildedRose([new Item("foo", sellIn, quality)]);
     let items = gildedRose.updateQuality();
@@ -90,7 +90,7 @@ describe("Gilded Rose", function () {
 
   it("Bried should upgrade quality x2 with selliing negative", function () {
     const quality = 10;
-    const sellIn = 0;
+    const sellIn = -1;
 
     const gildedRose = new GildedRose([new Item("Aged Brie", sellIn, quality)]);
     const items = gildedRose.updateQuality();
@@ -193,7 +193,7 @@ describe("Gilded Rose", function () {
 
   it("Backstage quality goes to 0 with selliing  <= 0", function () {
     const quality = 50;
-    const sellIn = 0;
+    const sellIn = -1;
 
     const gildedRose = new GildedRose([
       new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality),

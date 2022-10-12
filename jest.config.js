@@ -5,5 +5,5 @@ module.exports = {
   testPathIgnorePatterns: ["/node_modules/", "/dist/", "/blueprint-templates/"],
   collectCoverageFrom: ["app/gilded-rose.ts"],
   collectCoverage: true,
-  testMatch: ["**/__tests__/**/*.test.[jt]s?(x)"],
+  testMatch: ["**/.tests/**/*.test.[jt]s?(x)"],
 };
